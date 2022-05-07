@@ -32,6 +32,11 @@ switch ($this->type) {
 </div>
 ```
 
+## TODO
+
+- [ ] Cache statt Outputfilter nutzen
+- [ ] Slots nutzen
+
 ## Credits
 
 **Laravel**
