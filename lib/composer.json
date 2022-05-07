@@ -1,0 +1,9 @@
+{
+  "require": {
+    "illuminate/container": "^9.0",
+    "illuminate/contracts": "^9.0",
+    "illuminate/events": "^9.0",
+    "illuminate/filesystem": "^9.0",
+    "illuminate/view": "^9.0"
+  }
+}
