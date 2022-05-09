@@ -10,7 +10,7 @@ class Components
      * @return void
      * @throws \rex_exception
      */
-    public static function OutputFilter(\rex_extension_point $ep) {
+    public static function parseComponents(\rex_extension_point $ep): void {
         $c = new ComponentsCompiler();
         $t = $c->compile($ep->getSubject());
         $ep->setSubject($t);

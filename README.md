@@ -34,7 +34,7 @@ switch ($this->type) {
 
 ## TODO
 
-- [ ] Cache statt Outputfilter nutzen
+- [X] Cache statt Outputfilter nutzen
 - [ ] Slots nutzen
 
 ## Credits
