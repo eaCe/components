@@ -1,1 +1,5 @@
 components_title = Components
+components_frontend_only = Apply output filter in frontend only
+components_settings = Settings
+components_save = save
+components_saved = saved

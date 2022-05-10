@@ -1,1 +1,5 @@
 components_title = Components
+components_frontend_only = Output-Filter nur im Frontend anwenden
+components_settings = Einstellungen
+components_save = speichern
+components_saved = gespeichert

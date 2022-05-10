@@ -4,6 +4,13 @@ name: Components
 author: eaCe
 supportpage: https://github.com/eace/components
 
+page:
+  title: translate:title
+  perm: admin
+  icon: rex-icon fa-puzzle-piece
+  subpages:
+    settings: { title: translate:settings }
+
 requires:
   redaxo: ^5.12.0
   php:
