@@ -91,6 +91,67 @@
         </div>
     </div>
 
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Dropdown
+    </h2>
+
+    <p class="mb-5">
+        A simple dropdown component. Further information can be found in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/">ARIA Menu Button Example</a>.
+    </p>
+
+    <div x-data="{ open: false }" class="relative">
+        <button @click="open = !open"
+                @keyup.escape.window="open = false"
+                type="button"
+                :aria-expanded="open"
+                aria-controls="menu"
+                aria-haspopup="true"
+                id="menu-button"
+                class="inline-flex items-center justify-between px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+            <span class="font-semibold">Dropdown</span>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="1.5"
+                 stroke="currentColor"
+                 :class="{'rotate-180': open}"
+                 class="w-5 h-5 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+            </svg>
+        </button>
+
+        <div x-show="open"
+             x-cloak
+             @click.away="open = false"
+             id="menu"
+             aria-labelledby="menu-button"
+             role="menu"
+             class="absolute z-10 min-w-10 min-w-60 mt-2 bg-white rounded-md shadow-lg">
+            <ul class="py-1">
+                <li role="menuitem">
+                    <a href="#"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                        Item 1
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                        Item 2
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#"
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                        Item 3
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
 
