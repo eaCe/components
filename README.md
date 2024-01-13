@@ -1,0 +1,37 @@
+# Tailwind and Alpine.js Components
+
+This project contains several UI components built with Tailwind CSS and Alpine.js. 
+You can view a demo of the components in the `examples.html` file.
+The components are:
+
+## Accordion
+
+A simple accordion component. Further information can be found in
+the [ARIA Accordion Example](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/). It uses Alpine's
+Collapse plugin to handle the accordion functionality.
+
+## Dropdown
+
+A simple dropdown component. Further information can be found in
+the [ARIA Menu Button Example](https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/).
+
+## Switch
+
+A simple switch button component.
+
+## Modal
+
+A simple modal component. Further information can be found in
+the [ARIA Dialog Modal Example](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/). It uses
+Alpine's Focus plugin to trap focus within the modal.
+
+## Usage
+
+To use these components, simply include the HTML code in your project and ensure you have Tailwind CSS and Alpine.js
+included in your project. Some components may require additional Alpine.js plugins, such as the Focus plugin for the
+Modal component.
+
+## Dependencies
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Alpine.js](https://alpinejs.dev/)
