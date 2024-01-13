@@ -5,6 +5,7 @@
     <title>Components Examples</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -34,6 +35,8 @@
     <p class="mb-5">
         A simple accordion component. Further information can be found in the
         <a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/">ARIA Accordion Example</a>.
+        <br>
+        Uses Alpine's Collapse plugin to handle the accordion functionality.
     </p>
 
     <div x-data="{open: null, toggle(id) {this.open = this.open === id ? null : id}}" class="w-full space-y-4">
@@ -98,7 +101,8 @@
     </h2>
 
     <p class="mb-5">
-        A simple dropdown component. Further information can be found in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/">ARIA Menu Button Example</a>.
+        A simple dropdown component. Further information can be found in the
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/">ARIA Menu Button Example</a>.
     </p>
 
     <div x-data="{ open: false }" class="relative">
@@ -118,7 +122,7 @@
                  stroke="currentColor"
                  :class="{'rotate-180': open}"
                  class="w-5 h-5 ml-2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
             </svg>
         </button>
 
@@ -168,6 +172,64 @@
         <span aria-hidden="true"
               class="inline-block left-0 w-5 h-5 transition duration-200 ease-in transform bg-white rounded-full shadow peer-checked:translate-x-5 peer-checked:bg-slate-500"></span>
     </label>
+
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Modal
+    </h2>
+
+    <p class="mb-5">
+        A simple modal component. Further information can be found in the
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/">ARIA Dialog Modal Example</a>.
+        <br>
+        Uses Alpine's Focus plugin to trap focus within the modal.
+    </p>
+
+    <div x-data="{ open: true }" class="relative">
+        <button @click="open = true"
+                type="button"
+                class="inline-flex items-center justify-between px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+            <span class="font-semibold">Open Modal</span>
+        </button>
+
+        <template x-teleport="body">
+            <div x-show="open"
+                 x-cloak
+                 @keyup.escape.window="open = false"
+                 id="modal"
+                 aria-labelledby="modal-title"
+                 role="dialog"
+                 aria-modal="true"
+                 class="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
+                <div class="bg-white shadow-lg w-full max-w-2xl"
+                     x-trap.noscroll.inert="open"
+                     @click.away="open = false">
+                    <div class="p-4 relative">
+                        <div class="flex items-start justify-between">
+                            <h2 id="modal-title" class="text-2xl font-bold mb-2">
+                                Modal Title
+                            </h2>
+                            <button @click="open = false"
+                                    type="button"
+                                    class="inline-flex items-center justify-between p-2 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem dolorum
+                            exercitationem illo illum, iste itaque molestiae mollitia non nostrum officiis quae, qui
+                            quis
+                            quisquam quo reprehenderit tenetur totam voluptatibus?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
 
 </div>
 
