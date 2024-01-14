@@ -25,7 +25,7 @@
          @click="previous()"
          x-text="currentYear > minYear ? previousYear : '&nbsp;'"></div>
 
-    <div class="text-lg font-semibold focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50"
+    <div class="text-lg font-semibold focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
          role="spinbutton"
          tabindex="0"
          @keydown.up.prevent="currentYear = Math.min(currentYear + 1, maxYear)"

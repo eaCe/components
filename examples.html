@@ -46,7 +46,7 @@
                     :aria-expanded="open === id"
                     :aria-controls="`section${id}`"
                     :id="`accordion${id}`"
-                    class="w-full text-left px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                    class="w-full text-left px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                 <span class="font-semibold">Accordion Item</span>
             </button>
 
@@ -72,7 +72,7 @@
                     :aria-expanded="open === id"
                     :aria-controls="`section${id}`"
                     :id="`accordion${id}`"
-                    class="w-full text-left px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                    class="w-full text-left px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                 <span class="font-semibold">Accordion Item</span>
             </button>
 
@@ -113,7 +113,7 @@
                 aria-controls="menu"
                 aria-haspopup="true"
                 id="menu-button"
-                class="inline-flex items-center justify-between px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                class="inline-flex items-center justify-between px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
             <span class="font-semibold">Dropdown</span>
             <svg xmlns="http://www.w3.org/2000/svg"
                  fill="none"
@@ -136,19 +136,19 @@
             <ul class="py-1">
                 <li role="menuitem">
                     <a href="#"
-                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus-visible:bg-slate-200 focus-visible:text-gray-900">
                         Item 1
                     </a>
                 </li>
                 <li role="menuitem">
                     <a href="#"
-                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus-visible:bg-slate-200 focus-visible:text-gray-900">
                         Item 2
                     </a>
                 </li>
                 <li role="menuitem">
                     <a href="#"
-                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-100 hover:text-gray-900 focus-visible:bg-slate-100 focus-visible:text-gray-900">
+                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-gray-900 focus-visible:bg-slate-200 focus-visible:text-gray-900">
                         Item 3
                     </a>
                 </li>
@@ -166,11 +166,11 @@
         A simple switch component.
     </p>
 
-    <label class="relative inline-flex w-10 bg-slate-100 rounded-full cursor-pointer focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-slate-500 focus-within:ring-opacity-50">
+    <label class="relative inline-flex w-10 bg-purple-300 rounded-full cursor-pointer focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-500 focus-within:ring-opacity-50">
         <span class="sr-only">Toggle Title</span>
         <input type="checkbox" name="toggle" class="absolute opacity-0 peer -left-[200vw]">
         <span aria-hidden="true"
-              class="inline-block left-0 w-5 h-5 transition duration-200 ease-in transform bg-white rounded-full shadow peer-checked:translate-x-5 peer-checked:bg-slate-500"></span>
+              class="inline-block left-0 w-5 h-5 transition duration-200 ease-in transform bg-white rounded-full shadow peer-checked:translate-x-5 peer-checked:bg-purple-800"></span>
     </label>
 
     <hr class="my-10">
@@ -189,7 +189,7 @@
     <div x-data="{ open: false }" class="relative">
         <button @click="open = true"
                 type="button"
-                class="inline-flex items-center justify-between px-4 py-2 bg-slate-100 hover:bg-slate-200 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                class="inline-flex items-center justify-between px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
             <span class="font-semibold">Open Modal</span>
         </button>
 
@@ -212,7 +212,7 @@
                             </h2>
                             <button @click="open = false"
                                     type="button"
-                                    class="inline-flex items-center justify-between p-2 focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50">
+                                    class="inline-flex items-center justify-between p-2 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
                                 </svg>
@@ -270,7 +270,7 @@
                  @click="previous()"
                  x-text="currentYear > minYear ? previousYear : '&nbsp;'"></div>
 
-            <div class="text-lg font-semibold focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50"
+            <div class="text-lg font-semibold focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
                  role="spinbutton"
                  tabindex="0"
                  @keydown.up.prevent="currentYear = Math.min(currentYear + 1, maxYear)"
