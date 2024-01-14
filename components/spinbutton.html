@@ -1,0 +1,57 @@
+<div class="flex flex-col items-center"
+     x-data="{
+                currentYear: 2024,
+                minYear: 1999,
+                maxYear: 2050,
+                next() { this.currentYear = Math.min(this.currentYear + 1, this.maxYear) },
+                previous() { this.currentYear = Math.max(this.currentYear - 1, this.minYear) },
+                get nextYear() { return Math.min(this.currentYear + 1, this.maxYear) },
+                get previousYear() { return Math.max(this.currentYear - 1, this.minYear) }
+            }">
+
+    <button class="inline-flex items-center justify-between px-2 py-1 opacity-50 hover:opacity-100 transition-opacity"
+            @click="previous()"
+            tabindex="-1"
+            aria-label="Previous Year">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+
+    <div class="select-none opacity-50 text-sm my-1"
+         tabindex="-1"
+         role="button"
+         aria-hidden="true"
+         @click="previous()"
+         x-text="currentYear > minYear ? previousYear : '&nbsp;'"></div>
+
+    <div class="text-lg font-semibold focus:outline-none focus:ring focus:ring-slate-500 focus:ring-opacity-50"
+         role="spinbutton"
+         tabindex="0"
+         @keydown.up.prevent="currentYear = Math.min(currentYear + 1, maxYear)"
+         @keydown.down.prevent="currentYear = Math.max(currentYear - 1, minYear)"
+         x-text="currentYear"
+         :aria-valuenow="currentYear"
+         :aria-valuemin="minYear"
+         aria-valuemax="maxYear"
+         aria-label="Year">
+    </div>
+
+    <div class="select-none opacity-50 text-sm my-1"
+         tabindex="-1"
+         role="button"
+         aria-hidden="true"
+         @click="next()"
+         x-text="currentYear < maxYear ? nextYear : '&nbsp;'"></div>
+
+    <button class="inline-flex items-center justify-between px-2 py-1 opacity-50 hover:opacity-100 transition-opacity"
+            @click="next()"
+            tabindex="-1"
+            aria-label="Next Year">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+    </button>
+
+    <input type="hidden" name="spinbutton" value="0" x-model="currentYear">
+</div>
