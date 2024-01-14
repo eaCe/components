@@ -2,7 +2,8 @@
 
 This project contains several UI components built with Tailwind CSS and Alpine.js.
 The aim of this project is to provide a set of accessible UI components that can be used in any project.
-You can view a demo of the components in the `examples.html` file.
+You can view a demo of the components in the `examples.html` file or on codepen.io at https://codepen.io/eace/pen/mdoOvjr.
+
 The components are:
 
 ## Accordion
