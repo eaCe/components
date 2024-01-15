@@ -32,6 +32,11 @@ Alpine's Focus plugin to trap focus within the modal.
 A simple spinbutton component. Further information can be found in the
 [ARIA Spinbutton Example](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/).
 
+## Tabs
+
+A simple tabs component. Further information can be found in the
+[ARIA Tabs Example](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+
 ## Usage
 
 To use these components, simply include the HTML code in your project and ensure you have Tailwind CSS and Alpine.js

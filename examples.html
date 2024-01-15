@@ -301,6 +301,68 @@
             <input type="hidden" name="spinbutton" value="0" x-model="currentYear">
         </div>
     </div>
+
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Tabs
+    </h2>
+
+    <p class="mb-5">
+        A simple tabs component. Further information can be found in the
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">ARIA Tabs Example</a>.
+    </p>
+
+    <div x-data="{ active: 1 }" class="w-full">
+        <div class="border-b">
+            <p id="tablist" class="sr-only">Select a tab</p>
+            <div class="flex"
+                 role="tablist"
+                 aria-labelledby="tablist"
+                 @keydown.left.prevent.stop="$focus.wrap().prev()"
+                 @keydown.right.prevent.stop="$focus.wrap().next()">
+                <button @click="active = 1"
+                        type="button"
+                        :class="{'border-b-2 border-purple-600': active === 1}"
+                        class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
+                    Tab 1
+                </button>
+                <button @click="active = 2"
+                        type="button"
+                        :class="{'border-b-2 border-purple-600': active === 2}"
+                        class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
+                    Tab 2
+                </button>
+            </div>
+        </div>
+        <div class="py-2">
+            <div x-show="active === 1"
+                 x-cloak
+                 id="tab1"
+                 role="tabpanel"
+                 aria-labelledby="tab1-label">
+                <div class="p-2">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem dolorum
+                        exercitationem illo illum, iste itaque molestiae mollitia non nostrum officiis quae, qui quis
+                        quisquam quo reprehenderit tenetur totam voluptatibus?
+                    </p>
+                </div>
+            </div>
+            <div x-show="active === 2"
+                 x-cloak
+                 id="tab2"
+                 role="tabpanel"
+                 aria-labelledby="tab2-label">
+                <div class="p-3">
+                    <p>
+                        Lorem ipsum dolor sit amet
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
