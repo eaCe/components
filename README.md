@@ -2,7 +2,8 @@
 
 This project contains several UI components built with Tailwind CSS and Alpine.js.
 The aim of this project is to provide a set of accessible UI components that can be used in any project.
-You can view a demo of the components in the `examples.html` file or on codepen.io at https://codepen.io/eace/pen/mdoOvjr.
+You can view a demo of the components in the `examples.html` file or on codepen.io
+at https://codepen.io/eace/pen/mdoOvjr.
 
 The components are:
 
@@ -36,6 +37,10 @@ A simple spinbutton component. Further information can be found in the
 
 A simple tabs component. Further information can be found in the
 [ARIA Tabs Example](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/).
+
+## Offcanvas
+
+A simple offcanvas component. It uses Alpine's Focus plugin to trap focus within the offcanvas element.
 
 ## Usage
 

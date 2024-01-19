@@ -375,6 +375,71 @@
         </div>
     </div>
 
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Offcanvas
+    </h2>
+
+    <p class="mb-5">
+        A simple offcanvas component.
+        <br>
+        Uses Alpine's Focus plugin to trap focus within the offcanvas.
+    </p>
+
+    <div x-data="{open: false}">
+        <button @click="open = ! open"
+                type="button"
+                class="inline-flex items-center justify-between px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
+            <span class="font-semibold">Open Modal</span>
+        </button>
+
+        <template x-teleport="body">
+            <div x-show="open"
+                 x-transition:enter="transition ease-out duration-150"
+                 x-transition:enter-start="opacity-0 transform translate-x-[-100%]"
+                 x-transition:enter-end="opacity-100 transform translate-x-0"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 transform translate-x-0"
+                 x-transition:leave-end="opacity-0 transform translate-x-[-100%]"
+                 x-cloak
+                 x-trap.noscroll.inert="open"
+                 @keyup.escape.window="open = false"
+                 id="offcanvas"
+                 class="fixed bg-white shadow-lg top-0 left-0 bottom-0 w-full max-w-md p-6 z-50"
+                 tabindex="-1"
+                 aria-modal="true"
+                 role="dialog"
+                 :aria-hidden="open ? 'false' : 'true'"
+                 aria-labelledby="label">
+                <div class="flex justify-between mb-4">
+                    <h3 id="label" class="font-bold text-xl">Header</h3>
+                    <button type="button" aria-label="Close offcanvas" @click="open = false">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, delectus dolor est expedita facere fuga illo illum ipsam iste iusto magnam mollitia pariatur quam rerum totam velit, voluptas voluptatem.
+                </div>
+            </div>
+        </template>
+
+        <template x-teleport="body">
+            <div x-show="open"
+                 x-transition:enter="transition ease-out duration-150"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 x-cloak
+                 @click="open = false"
+                 class="fixed bg-black bg-opacity-30 z-10 w-full h-full left-0 top-0"></div>
+        </template>
+    </div>
+
 </div>
 
 
