@@ -42,6 +42,10 @@ A simple tabs component. Further information can be found in the
 
 A simple offcanvas component. It uses Alpine's Focus plugin to trap focus within the offcanvas element.
 
+## Spinner
+
+A simple spinner component.
+
 ## Usage
 
 To use these components, simply include the HTML code in your project and ensure you have Tailwind CSS and Alpine.js
