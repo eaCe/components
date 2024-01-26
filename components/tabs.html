@@ -7,12 +7,14 @@
              @keydown.left.prevent.stop="$focus.wrap().prev()"
              @keydown.right.prevent.stop="$focus.wrap().next()">
             <button @click="active = 1"
+                    id="tab1-label"
                     type="button"
                     :class="{'border-b-2 border-purple-600': active === 1}"
                     class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                 Tab 1
             </button>
             <button @click="active = 2"
+                    id="tab2-label"
                     type="button"
                     :class="{'border-b-2 border-purple-600': active === 2}"
                     class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
