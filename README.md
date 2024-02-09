@@ -46,6 +46,11 @@ A simple offcanvas component. It uses Alpine's Focus plugin to trap focus within
 
 A simple spinner component.
 
+## Dialog
+
+A native dialog component. It uses the native HTML dialog element and the `showModal` and `close` methods to show and
+hide the dialog.
+
 ## Usage
 
 To use these components, simply include the HTML code in your project and ensure you have Tailwind CSS and Alpine.js
