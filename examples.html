@@ -267,11 +267,11 @@
             }">
 
             <button class="inline-flex items-center justify-between px-2 py-1 opacity-50 hover:opacity-100 transition-opacity"
-                 @click="previous()"
-                 tabindex="-1"
-                 aria-label="Previous Year">
+                    @click="previous()"
+                    tabindex="-1"
+                    aria-label="Previous Year">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/>
                 </svg>
             </button>
 
@@ -302,11 +302,11 @@
                  x-text="currentYear < maxYear ? nextYear : '&nbsp;'"></div>
 
             <button class="inline-flex items-center justify-between px-2 py-1 opacity-50 hover:opacity-100 transition-opacity"
-                 @click="next()"
-                 tabindex="-1"
-                 aria-label="Next Year">
+                    @click="next()"
+                    tabindex="-1"
+                    aria-label="Next Year">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
                 </svg>
             </button>
 
@@ -418,12 +418,14 @@
                     <h3 id="label" class="font-bold text-xl">Header</h3>
                     <button type="button" aria-label="Close offcanvas" @click="open = false">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, delectus dolor est expedita facere fuga illo illum ipsam iste iusto magnam mollitia pariatur quam rerum totam velit, voluptas voluptatem.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, delectus dolor est
+                    expedita facere fuga illo illum ipsam iste iusto magnam mollitia pariatur quam rerum totam velit,
+                    voluptas voluptatem.
                 </div>
             </div>
         </template>
@@ -449,7 +451,8 @@
     </h2>
 
     <p class="mb-5">
-        A simple spinner component. Further information can be found in the <a href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA22.html">ARIA: status role document</a>.
+        A simple spinner component. Further information can be found in the
+        <a href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA22.html">ARIA: status role document</a>.
     </p>
 
     <div class="inline-flex items-center justify-center" role="status">
@@ -460,6 +463,56 @@
         <span class="sr-only">Loading...</span>
     </div>
 
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Dialog
+    </h2>
+
+    <p class="mb-5">
+        A native dialog component. Further information can be found in the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">MDN dialog documentation</a>.
+    </p>
+
+    <div x-data>
+        <button type="button"
+                class="inline-flex items-center justify-between px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                @click.prevent="$refs.dialog.showModal()">
+            <span class="font-semibold">Open Dialog</span>
+        </button>
+
+        <dialog x-ref="dialog"
+                class="p-5 shadow-lg w-full max-w-md backdrop:bg-black backdrop:bg-opacity-50 backdrop:backdrop-blur-sm">
+            <div class="flex justify-between mb-4">
+                <h3 class="font-bold text-xl">Header</h3>
+                <button type="button"
+                        autofocus
+                        aria-label="Close dialog"
+                        @click.prevent="$refs.dialog.close()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, delectus dolor est
+                expedita facere fuga illo illum ipsam iste iusto magnam mollitia pariatur quam rerum totam velit,
+                voluptas voluptatem.
+            </div>
+            <div class="flex justify-end mt-4 gap-4">
+                <button type="button"
+                        class="font-bold px-4 py-2 text-white bg-purple-600 transition-colors hover:bg-purple-800 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                        @click.prevent="$refs.dialog.close()">
+                    Ok
+                </button>
+                <button type="button"
+                        class="font-bold px-4 py-2 text-white bg-red-600 transition-colors hover:bg-red-800 focus:outline-none focus:ring focus:ring-red-500 focus:ring-opacity-50"
+                        @click.prevent="$refs.dialog.close()">
+                    Cancel
+                </button>
+            </div>
+        </dialog>
+    </div>
 </div>
 
 
