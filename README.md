@@ -51,6 +51,10 @@ A simple spinner component.
 A native dialog component. It uses the native HTML dialog element and the `showModal` and `close` methods to show and
 hide the dialog.
 
+## Details
+
+A native details component. It uses the native HTML details and summary elements to create a simple collapsible section.
+
 ## Usage
 
 To use these components, simply include the HTML code in your project and ensure you have Tailwind CSS and Alpine.js

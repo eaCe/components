@@ -277,7 +277,6 @@
 
             <div class="select-none opacity-50 text-sm my-1"
                  tabindex="-1"
-                 role="button"
                  aria-hidden="true"
                  @click="previous()"
                  x-text="currentYear > minYear ? previousYear : '&nbsp;'"></div>
@@ -296,7 +295,6 @@
 
             <div class="select-none opacity-50 text-sm my-1"
                  tabindex="-1"
-                 role="button"
                  aria-hidden="true"
                  @click="next()"
                  x-text="currentYear < maxYear ? nextYear : '&nbsp;'"></div>
@@ -336,6 +334,7 @@
                 <button @click="active = 1"
                         id="tab1-label"
                         type="button"
+                        role="tab"
                         :class="{'border-b-2 border-purple-600': active === 1}"
                         class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                     Tab 1
@@ -343,6 +342,7 @@
                 <button @click="active = 2"
                         id="tab2-label"
                         type="button"
+                        role="tab"
                         :class="{'border-b-2 border-purple-600': active === 2}"
                         class="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">
                     Tab 2
@@ -513,6 +513,27 @@
             </div>
         </dialog>
     </div>
+
+    <hr class="my-10">
+
+    <h2 class="text-3xl font-bold mb-2">
+        Details
+    </h2>
+
+    <p class="mb-5">
+        A native details/collapsible component. Further information can be found in the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">MDN details documentation</a>.
+    </p>
+
+    <details class="border rounded-md group ">
+        <summary class="font-bold cursor-pointer p-4 group-open:marker:text-purple-500 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50">Details</summary>
+        <p class="border-t p-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, delectus dolor est
+            expedita facere fuga illo illum ipsam iste iusto magnam mollitia pariatur quam rerum totam velit,
+            voluptas voluptatem.
+        </p>
+    </details>
+
 </div>
 
 
